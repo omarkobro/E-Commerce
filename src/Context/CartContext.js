@@ -1,8 +1,10 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { UserContext } from "./UserContext";
 
 export let CartContext = createContext()
 export default function CartContextProvider(props){
+    let {setUserToken} = useContext(UserContext)
     let baseUrl = `https://ecommerce.routemisr.com`
     let [cartCount, setCartCount] = useState(0)
     let header = {
@@ -10,6 +12,8 @@ export default function CartContextProvider(props){
     }
 
     useEffect(()=>{
+        setUserToken(localStorage.getItem("userToken"))
+
         if(localStorage.getItem("userToken")){
             getAllCart().then((req)=>{
                 setCartCount(req?.data.numOfCartItems)

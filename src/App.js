@@ -53,7 +53,7 @@ function App() {
   return <>
 
 <Provider store={store}>
-      <UserContextProvider>
+  <UserContextProvider>
   <CartContextProvider>
     <WishListContextProvider>
 
@@ -66,7 +66,7 @@ function App() {
 
     </WishListContextProvider>
   </CartContextProvider>
-      </UserContextProvider>
+  </UserContextProvider>
 </Provider>
 
   </>
