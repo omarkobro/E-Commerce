@@ -23,7 +23,7 @@ useEffect(()=>{
   return (
   <div className='container'>
       <h2 className='text-main text-center mt-5 fs-1'>All Brands</h2>
-    <div class="row g-3">
+    <div className="row g-3">
       {
         categories.map((category)=>{
           return <div className='col-md-3 brandCol'>

@@ -50,7 +50,6 @@ export default function Home() {
     let {data} = await addProductToCart(id).catch((err)=>{
       console.log(err);
     })
-    console.log(data);
     if(data.status == "success"){
       setCartCount(data.numOfCartItems)
       toast.success(data.message)
@@ -87,7 +86,7 @@ export default function Home() {
                         <span><i className=' fas fa-star text-rating'></i> {product.ratingsAverage}</span>
                     </div>
                 </Link>
-                  <div class="row justify-content-between align-items-center">
+                  <div className="row justify-content-between align-items-center">
                     <div className='col-md-9 py-0'>
                     <button  onClick={() => {addCart(product._id)}} className='btn bg-main text-white p-1 my-2 w-100'>add to cart </button>
                     </div>

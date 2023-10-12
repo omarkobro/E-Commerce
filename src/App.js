@@ -53,14 +53,20 @@ function App() {
   return <>
 
 <Provider store={store}>
+      <UserContextProvider>
   <CartContextProvider>
     <WishListContextProvider>
-      <UserContextProvider>
+
+
+
         <RouterProvider router={router}>
         </RouterProvider>
-      </UserContextProvider>
+
+
+
     </WishListContextProvider>
   </CartContextProvider>
+      </UserContextProvider>
 </Provider>
 
   </>

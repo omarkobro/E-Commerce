@@ -12,7 +12,7 @@ export default function CartContextProvider(props){
     useEffect(()=>{
         if(localStorage.getItem("userToken")){
             getAllCart().then((req)=>{
-                setCartCount(req.data.numOfCartItems)
+                setCartCount(req?.data.numOfCartItems)
             }).catch(()=>{
                 setCartCount(0)
             })
